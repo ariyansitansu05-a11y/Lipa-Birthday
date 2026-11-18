@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#160c1b">
+  <title>A little world made for you</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Great+Vibes&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="ambient ambient-one" aria-hidden="true"></div>
+  <div class="ambient ambient-two" aria-hidden="true"></div>
+  <div id="particle-field" aria-hidden="true"></div>
+  <button class="music-toggle" id="music-toggle" type="button" aria-label="Play background music" aria-pressed="false">
+    <span class="music-bars"><i></i><i></i><i></i></span>
+    <span id="music-label">Music</span>
+  </button>
+  <audio id="background-music" loop preload="none"></audio>
+
+  <main>
+    <section class="scene intro-scene" id="intro" aria-labelledby="intro-title">
+      <div class="birthday-decoration" aria-hidden="true">
+        <div class="bulb-string">
+          <span class="bulb bulb-yellow"></span>
+          <span class="bulb bulb-coral"></span>
+          <span class="bulb bulb-blue"></span>
+          <span class="bulb bulb-green"></span>
+          <span class="bulb bulb-pink"></span>
+          <span class="bulb bulb-gold"></span>
+        </div>
+        <div class="bunting">
+          <span class="flag">H</span>
+          <span class="flag">a</span>
+          <span class="flag">p</span>
+          <span class="flag">p</span>
+          <span class="flag">y</span>
+          <span class="flag">B</span>
+          <span class="flag">i</span>
+          <span class="flag">r</span>
+          <span class="flag">t</span>
+          <span class="flag">h</span>
+          <span class="flag">d</span>
+          <span class="flag">a</span>
+          <span class="flag">y</span>
+        </div>
+        <span class="garland-heart garland-heart-left" aria-hidden="true">♥</span>
+        <span class="garland-heart garland-heart-right" aria-hidden="true">♥</span>
+      </div>
+      <div class="intro-content">
+        <p class="eyebrow">A private little universe</p>
+        <h1 id="intro-title">Hey <span data-config="nickname">Gudul</span>...</h1>
+        <p class="intro-subtitle">Someone has created a little world<br>just for you.</p>
+        <button class="envelope" id="envelope" type="button" aria-label="Open your birthday letter">
+          <span class="envelope-flap"></span>
+          <span class="envelope-body"></span>
+          <span class="envelope-letter">For my favourite person</span>
+          <span class="seal">♥</span>
+        </button>
+        <p class="hint">Tap the heart to begin</p>
+      </div>
+    </section>
+
+    <section class="scene reveal-scene" id="reveal" aria-labelledby="reveal-title">
+      <div class="stars" aria-hidden="true"></div>
+      <div class="balloon balloon-a" aria-hidden="true"></div>
+      <div class="balloon balloon-b" aria-hidden="true"></div>
+      <div class="balloon balloon-c" aria-hidden="true"></div>
+      <div class="scene-inner reveal-inner">
+        <p class="eyebrow">Today, and every day after</p>
+        <h2 id="reveal-title"><span data-config="birthdayGreeting">Happy Birthday</span>,<br><em>my dearest <span data-config="nickname">Gudul</span>!</em> <span class="accent">♥</span></h2>
+        <p class="lead">Today is not just another day. It is the day the world became a little more beautiful because you were born.</p>
+        <time class="birthday-date" data-config="birthdayDate"></time>
+        <p class="section-copy">There is a little more magic waiting for you just ahead.</p>
+      </div>
+    </section>
+
+    <section class="scene gallery-scene" id="gallery" aria-labelledby="gallery-title">
+      <div class="scene-inner">
+        <p class="eyebrow">Little snapshots of us</p>
+        <h2 id="gallery-title">Every picture holds a little<br><em>piece of my happiness.</em> <span class="accent">♥</span></h2>
+        <p class="section-copy">A few tiny windows into the person who makes my world brighter.</p>
+        <div class="gallery-grid" id="gallery-grid"></div>
+      </div>
+    </section>
+
+    <section class="scene cake-scene" id="cake" aria-labelledby="cake-title">
+      <div class="wish-celebration" id="wish-celebration" aria-live="polite" aria-hidden="true">
+        <div class="wish-balloon-field" id="wish-balloon-field" aria-hidden="true"></div>
+        <div class="wish-celebration-content">
+          <p class="eyebrow">A little celebration for you</p>
+          <h2>Happy Birthday<br><em>My Girl!</em> <span class="accent">♥</span></h2>
+          <p>May this year bring you everything your heart is dreaming of.</p>
+        </div>
+      </div>
+      <div class="scene-inner cake-inner">
+        <p class="eyebrow">A birthday cake made with love</p>
+        <h2 id="cake-title">Make a wish, <em><span data-config="nickname">Gudul</span>...</em></h2>
+        <p class="lead">You deserve every beautiful thing in this world.</p>
+        <div class="cake-wrap" aria-label="Birthday cake with candles">
+          <div class="cake">
+            <div class="flames"><span></span><span></span><span></span></div>
+            <div class="candles"><i></i><i></i><i></i></div>
+            <div class="cake-top"></div><div class="cake-middle"></div><div class="cake-bottom"></div>
+            <div class="plate"></div>
+          </div>
+        </div>
+        <button class="button button-primary" id="wish-button" type="button">Make a wish <span>✦</span></button>
+        <p class="wish-message" id="wish-message" aria-live="polite">May your smile never fade, your dreams keep growing, and your life always be filled with happiness.</p>
+      </div>
+    </section>
+
+    <section class="scene letter-scene" id="letter" aria-labelledby="letter-title">
+      <div class="scene-inner letter-layout">
+        <div class="letter-side">
+          <div class="letter-intro">
+            <p class="eyebrow">The words I carry in my heart</p>
+            <h2 id="letter-title">My letter<br><em>to you.</em></h2>
+            <div class="line"></div>
+            <p class="section-copy">Some feelings deserve more than a birthday wish. They deserve a whole page.</p>
+          </div>
+          <div class="memory-card">
+            <p class="eyebrow">A memory I will always keep</p>
+            <h3>The day our story became ours <span>😇</span></h3>
+            <p data-config="memoryMessage"></p>
+            <time data-config="memoryDate"></time>
+          </div>
+        </div>
+        <article class="letter-paper">
+          <span class="paper-stamp">With love</span>
+          <div id="letter-content"></div>
+          <div class="signature">Forever choosing you...<br><small>With all my love,</small><br><strong data-config="sender">Ariyan</strong> <span class="accent">♥</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="scene final-scene" id="finale" aria-labelledby="final-title">
+      <div class="constellation" aria-hidden="true"></div>
+      <div class="scene-inner final-inner">
+        <p class="eyebrow">One last thing...</p>
+        <h2 id="final-title">One birthday,<br><em>a thousand smiles,</em><br>and a lifetime of love.</h2>
+        <p class="final-copy">Happy Birthday once again, <span data-config="nickname">Gudul</span>.<br>Thank you for being a beautiful part of my life.</p>
+        <button class="button button-outline" id="hug-button" type="button">One hug for you <span>↗</span></button>
+        <div class="hug-result" id="hug-result" aria-live="polite">
+          <span class="hug-heart">♥</span>
+          Sending you the biggest hug, <span data-config="nickname">Gudul</span>!
+        </div>
+        <p class="footer-signoff">With love, <span data-config="sender">Ariyan</span> <span class="accent">♥</span></p>
+      </div>
+    </section>
+  </main>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Memory photo" hidden>
+    <button class="lightbox-close" id="lightbox-close" type="button" aria-label="Close photo">×</button>
+    <img id="lightbox-image" alt="">
+    <p id="lightbox-caption"></p>
+  </div>
+  <script src="js/config.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
